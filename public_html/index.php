@@ -1,3 +1,6 @@
+<?php
+include_once ('../processamento/processamento.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
