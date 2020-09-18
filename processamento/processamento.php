@@ -49,7 +49,7 @@ function GetResposeApi(string $categoria, $queryParams = null)
 
     $response = json_decode($response);
 
-    if (!is_null($response) && $response->status == 'Ok') {
+    if (!is_null($response) && $response->code == 200) {
         return $response;
     } elseif (is_null($response)) {
         return '<b>Erro PROC02</b><br>Ocorreu um erro com a requisição. Por favor, entre em contato com os desenvolvedores!';
