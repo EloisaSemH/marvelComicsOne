@@ -40,24 +40,13 @@ class Authorization
     {
         if ($this->SetKeys()){
             $keys = [];
-            $keys['timestamp'] = $this->authapi->getTimestamp();
-            $keys['private'] = $this->authapi->getPrivatekey();
-            $keys['public'] = $this->authapi->getPublickey();
+            $keys['timestamp'] = trim($this->authapi->getTimestamp());
+            $keys['private'] = trim($this->authapi->getPrivatekey());
+            $keys['public'] = trim($this->authapi->getPublickey());
+            $keys['hash'] = md5($keys['timestamp'] . $keys['private'] . $keys['public']);
             return $keys;
         }else{
             return 'Erro ao setar keys';
-        }
-    }
-
-    public function CreateHash()
-    {
-        $keys = $this->GetKeys();
-
-        if(is_array($keys)){
-            $hash = $keys['timestamp'] . $keys['private'] . $keys['public'];
-            return md5($hash);
-        }else{
-            return 'Houve algum erro ao pegar as keys';
         }
     }
 }
