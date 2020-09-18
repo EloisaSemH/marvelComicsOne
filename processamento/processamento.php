@@ -59,3 +59,32 @@ function GetResposeApi(string $categoria, $queryParams = null)
         return $response;
     }
 }
+
+function TraduzirTexto(string $texto)
+{
+    if ($texto != ' ' && $texto != '') {
+        $url = 'https://api.mymemory.translated.net/get?langpair=en-us|pt-br&q=';
+
+        $urlPrepare = $url . $texto;
+
+        $ch = curl_init($urlPrepare);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        $response = json_decode($response);
+
+        if (!is_null($response) && !$response->quotaFinished && !$response->responseStatus == 200) {
+            return $response->matches->translation;
+        } elseif (is_null($response)) {
+            return '<b>Erro PROC03</b><br>Ocorreu um erro com a requisição. Por favor, entre em contato com os desenvolvedores!';
+        } elseif ($response->quotaFinished) {
+            return '<b>Erro PROC03.2</b><br>O limite de traduções foi atingido!';
+        } elseif (!is_null($response->exception_code)) {
+            return $response->exception_code;
+        } else {
+            return $response;
+        }
+    }
+}

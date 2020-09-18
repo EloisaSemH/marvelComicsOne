@@ -13,13 +13,14 @@ require_once('../processamento/processamento.php');
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../image/favicon.ico">
     <title>Marvel One</title>
 </head>
 
 <body class="bg-light">
     <div id="grandeImg" class="mb-4">
         <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand text-left" href="index.php"><img src="../images/logotipoMarvelComicsOne3.png" class="w-5 m-0 p-0"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,7 +29,7 @@ require_once('../processamento/processamento.php');
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">início <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
@@ -49,106 +50,160 @@ require_once('../processamento/processamento.php');
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </nav>
+        <div class="text-center text-white mt-4 pt-4">
+            <img src="../images/logotipoMarvelComicsOne3.png" class="w-50"><br>
+            <p class="text-center d-inline-block font-weight-bold px-3" style="max-width: 600px;">Tenha acesso a informações sobre o vasto arquivo de quadrinhos da Marvel, construido durante mais de 70 anos - e o que ainda está por vir!</p>
+        </div>
     </div>
 
-    <!-- <div class="container bg-light pt-4"> -->
-        <div class="row mx-3">
+    <div class="bg-light text-center">
+        <h1 class="pt-4 font-weight-bold text-marvel">Marvel Comics One</h1>
+        <div class="container">
+            <!-- Row -->
+            <div class="row counter-box text-center">
+                <!-- column  -->
+                <div class="col-lg-3 col-6 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                    <div class="">
+                        <h2 class="font-medium text-marvel m-b-0">+<span class="counter">70</span></h2>
+                        <h6 class="text-dark font-14 op-7">Anos de históra</h6>
+                    </div>
+                </div>
+                <!-- column  -->
+                <div class="col-lg-3 col-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="">
+                        <h2 class="font-medium text-marvel m-b-0"><span class="counter">1</span></h2>
+                        <h6 class="text-dark font-14 op-7">Só lugar</h6>
+                    </div>
+                </div>
+                <!-- column  -->
+                <div class="col-lg-3 col-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="">
+                        <h2 class="font-medium text-marvel m-b-0"><span class="counter">24</span>h</h2>
+                        <h6 class="text-dark font-14 op-7">Por dia</h6>
+                    </div>
+                </div>
+                <!-- column  -->
+                <div class="col-lg-3 col-6 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1200">
+                    <div class="">
+                        <h2 class="font-medium text-marvel m-b-0">R$ <span class="counter">0,00</span></h2>
+                        <h6 class="text-dark font-14 op-7">Sem nehum custo</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-4 pb-3 bg-light">
+        <div class="divider"></div>
+    </div>
+
+    <div class="bg-light pt-4">
+        <div class="row mx-3 bg-light">
             <section class="col-12 col-sm-6 col-md-4 image-grid-item">
-                <div style="background-image: url(https://cdn.beam.usnews.com/dims4/USNEWS/59f1d50/2147483647/thumbnail/970x647/quality/90/?url=http%3A%2F%2Fcom-usnews-beam-media.s3.amazonaws.com%2F28%2F21%2F37a23a5f40048594e7e1209a842d%2F150427-networking-stock.jpg	);"
-                    class="image-grid-cover">
+                <div style="background-image: url(../images/image-bg.jpg);"
+                    class="entry-cover image-grid-cover has-image">
                     <a href="categories.php?cat=" class="image-grid-clickbox"></a>
-                    <a href="categories.php?cat=" class="cover-wrapper">Etkinlikler</a>
+                    <a href="categories.php?cat=" class="cover-wrapper">Criadores</a>
                 </div>
             </section>
             <section class="col-12 col-sm-6 col-md-4 image-grid-item">
-                <div style="background-image: url(https://cdn.bolgegundem.com/d/news/333778.jpg	);"
+                <div style="background-image: url(../images/image-bg.jpg);"
                     class="entry-cover image-grid-cover has-image">
                     <a href="categories.php?cat=" class="image-grid-clickbox"></a>
-                    <a href="categories.php?cat=" class="cover-wrapper">Düğünler</a>
+                    <a href="categories.php?cat=" class="cover-wrapper">Eventos e crossovers</a>
                 </div>
             </section>
             <section class="col-12 col-sm-6 col-md-4 image-grid-item">
-                <div style="background-image: url(https://www.trthaber.com/resimler/218000/218798.jpg	);"
+                <div style="background-image: url(../images/characters-spiderman.jpeg);"
                     class="entry-cover image-grid-cover has-image">
                     <a href="categories.php?cat=" class="image-grid-clickbox"></a>
-                    <a href="categories.php?cat=" class="cover-wrapper">Gezi / Tur</a>
+                    <a href="categories.php?cat=" class="cover-wrapper">Personagens</a>
                 </div>
             </section>
             <section class="col-12 col-sm-6 col-md-4 image-grid-item">
-                <div style="background-image: url(http://www.technocrazed.com/wp-content/uploads/2015/12/Airplane-wallpaper-112-640x360.jpg);"
+                <div style="background-image: url(../images/comics-xmen-daysoffuture.jpeg);"
                     class="entry-cover image-grid-cover has-image">
                     <a href="categories.php?cat=" class="image-grid-clickbox"></a>
-                    <a href="categories.php?cat=" class="cover-wrapper">Havalimanı Transferi</a>
+                    <a href="categories.php?cat=" class="cover-wrapper">Quadrinhos</a>
                 </div>
             </section>
             <section class="col-12 col-sm-6 col-md-4 image-grid-item">
-                <div style="background-image: url(https://img-s2.onedio.com/id-5738f74cb6efafb314a46f07/rev-0/w-600/h-300/s-d707c9ec5af8f66dc5506a2796ac14fce1fbb35b.jpg	);"
+                <div style="background-image: url(../images/image-bg.jpg);"
                     class="entry-cover image-grid-cover has-image">
                     <a href="categories.php?cat=" class="image-grid-clickbox"></a>
-                    <a href="categories.php?cat=" class="cover-wrapper">Günlük Seyahat</a>
+                    <a href="categories.php?cat=series" class="cover-wrapper">Séries de quadrinhos</a>
                 </div>
             </section>
             <section class="col-12 col-sm-6 col-md-4 image-grid-item">
-                <div style="background-image: url(https://image.stern.de/8205460/16x9-940-529/3c6ed305ea6e6f63c0454fda4dbc5d02/hx/pic-grand-calfornia-2018--9-.jpg	);"
-                    class="entry-cover image-grid-cover has-image">
+                <div style="background-image: url(../images/image-bg.jpg);" class="image-grid-cover">
                     <a href="categories.php?cat=" class="image-grid-clickbox"></a>
-                    <a href="categories.php?cat=" class="cover-wrapper">Karavan Kiralama </a>
+                    <a href="categories.php?cat=" class="cover-wrapper">Estou com sorte!</a>
                 </div>
             </section>
         </div>
-    <!-- </div> -->
+    </div>
+
     <footer id="footer">
-    <div class="container">
-			<div class="row text-center text-xs-center text-sm-left text-md-left">
-				<div class="col-xs-12 col-sm-4 col-md-4">
+        <div class="container">
+            <section class="row text-center text-xs-center text-sm-left text-md-left">
+                <div class="col-xs-12 col-sm-4 col-md-4">
                     <h5>Quem somos</h5>
-                    <p class="text-white">Somos a QWERTY Code, uma empresa de desenvolvimento web criada para realizar os trabalhos do curso Sistemas para a Internet, na Faculdade de Tecnologia de São Roque (FATEC-SR). Seus idealizadores são a dupla de amigos Cesar August e Eloísa Carbalho.</p>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Criadores</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Eventos e crossovers</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Personagens</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Quadrinhos</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Séries de quadrinhos</a></li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="index.php"><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Sobre</a></li>
-						<li><a href="mailto:flordecactocomunicacao@gmail.com"><i class="fa fa-angle-double-right"></i>Contato</a></li>
-						<li><a href="https://github.com/EloisaSemH/marvelComicsOne"><i class="fa fa-angle-double-right"></i>Colabore</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-					<ul class="list-unstyled list-inline social text-center">
-						<li class="list-inline-item"><a href="https://github.com/EloisaSemH/marvelComicsOne" target="_blank"><i class="fa fa-github"></i></a></li>
-						<li class="list-inline-item"><a href="https://www.instagram.com/flordecactocomunicacao/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-						<li class="list-inline-item"><a href="mailto:flordecactocomunicacao@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
-					</ul>
-				</div>
-				<hr>
-			</div>	
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p>Site elaborado por <b>QWERTY Code</b>/<b>Flor de Cacto Comunicação</b>. Desenvolvedores: <b><a href="https://www.about.me/EloisaSemH" target="_blank">Eloísa Carvalho</a></b> e <b>Cesar August</b>.</p>
-					<p class="h6">© Todos os direitos reservados.<a class="text-green" href="https://www.sunlimetech.com" target="_blank"> QWERTY Code <?php echo date('Y'); ?></a>.</p>
-					<p class="h6">Data provided by <a class="text-green" href="http://www.marvel.com" target="_blank">Marvel. © <?php echo date('Y'); ?> MARVEL. All right Reversed.</a></p>
-				</div>
-				<hr>
-			</div>	
-		</div>
+                    <p class="text-white">Somos a QWERTY Code, uma empresa de desenvolvimento web criada para realizar
+                        os trabalhos do curso Sistemas para a Internet, na Faculdade de Tecnologia de São Roque
+                        (FATEC-SR). Seus idealizadores são a dupla de amigos Cesar August e Eloísa Carbalho.</p>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Mapa do site</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Criadores</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Eventos e crossovers</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Personagens</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Quadrinhos</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Séries de quadrinhos</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Outros links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="index.php"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Sobre</a></li>
+                        <li><a href="mailto:flordecactocomunicacao@gmail.com"><i
+                                    class="fa fa-angle-double-right"></i>Contato</a></li>
+                        <li><a href="https://github.com/EloisaSemH/marvelComicsOne"><i
+                                    class="fa fa-angle-double-right"></i>Colabore</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href="https://github.com/EloisaSemH/marvelComicsOne"
+                                target="_blank"><i class="fa fa-github"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com/flordecactocomunicacao/"
+                                target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="mailto:flordecactocomunicacao@gmail.com"
+                                target="_blank"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <hr>
+            </section>
+            <section class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p>Site elaborado por <b>QWERTY Code</b>/<b>Flor de Cacto Comunicação</b>. Desenvolvedores: <b><a
+                                href="https://www.about.me/EloisaSemH" target="_blank">Eloísa Carvalho</a></b> e
+                        <b>Cesar August</b>.
+                    </p>
+                    <p class="h6">© Todos os direitos reservados.<a class="text-green"
+                            href="https://www.sunlimetech.com" target="_blank"> QWERTY Code
+                            <?php echo date('Y'); ?></a>.</p>
+                    <p class="h6">Data provided by <a class="text-green" href="http://www.marvel.com"
+                            target="_blank">Marvel. © <?php echo date('Y'); ?> MARVEL. All right Reversed.</a></p>
+                </div>
+                <hr>
+            </section>
+        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -160,7 +215,9 @@ require_once('../processamento/processamento.php');
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 </body>
+
 </html>
 
 <!-- https://bootsnipp.com/snippets/PDbVm Cards -->
 <!-- https://bootsnipp.com/snippets/rlXdE Footer -->
+<!-- https://bootsnipp.com/snippets/VgZq8 Estatisticas -->

@@ -1,14 +1,35 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-#grandeImg {
+body {
     /* https://pxhere.com/pt/photo/817442 */
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(255, 0, 0, 0)), url(../images/image-bg.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(182, 0, 0, 0.5)), url(../images/image-bg.jpg);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    /* min-height: 650px; */
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+#grandeImg {
     min-height: 650px;
 }
 
 #navbar {
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(255, 0, 0, 0));
+}
+
+.divider {
+    border-bottom: grey solid 1px;
+}
+
+.text-marvel {
+    color: #ff0000;
+}
+
+.w-5 {
+    width: 10% !important;
 }
 
 
@@ -20,7 +41,7 @@
     min-height: 180px;
     position: relative;
     margin-bottom: 30px;
-    text-shadow: rgba(0, 0, 0, .8) 0 1px 0;
+    /* text-shadow: rgba(0, 0, 0, .8) 0 1px 0; */
     border-radius: 4px;
 }
 
@@ -42,17 +63,37 @@
     text-align: center;
     display: block;
     color: #fff;
-    text-shadow: rgba(0, 0, 0, .8) 0 1px 0;
+    /* text-shadow: rgba(0, 0, 0, .8) 0 1px 0; */
     z-index: 21;
     position: relative;
     top: 80px;
 }
 
 a,
-a:focus,
-a:hover {
+a:focus {
     text-decoration: none;
     outline: 0;
+}
+
+
+/* Counter box */
+
+.counter-box [class^=col-] {
+    color: #ff0000;
+    padding: 33px 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.counter-box [class^=col-]:last-child {
+    border-right: 0px;
+}
+
+.counter-box-dark [class^=col-] {
+    border-right: 1px solid rgba(120, 130, 140, 0.13);
+}
+
+.counter-box-dark [class^=col-]:last-child {
+    border-right: 0px;
 }
 
 
@@ -60,17 +101,16 @@ a:hover {
 
 footer {
     padding: 60px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    background-position: center;
+    background-attachment: fixed;
 }
 
 footer .section-title {
     text-align: center;
-    color: #007b5e;
+    color: #ff0000;
     margin-bottom: 50px;
     text-transform: uppercase;
-}
-
-footer {
-    background: #007b5e !important;
 }
 
 footer h5 {
