@@ -1,6 +1,8 @@
 <?php
 require_once('../processamento/processamento.php');
-GetResposeApi('comics');
+$characters = GetResposeApi('characters', array ('nameStartsWith' => 'Spider', 'orderBy' => '-name'));
+
+var_dump($characters);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

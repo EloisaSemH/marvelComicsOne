@@ -14,11 +14,48 @@ function PrepararURL()
     return $url;
 }
 
-
-function GetResposeApi(string $categoria, $queryParams = '')
+/**
+* Envia uma requisição para a API da Marvel
+*
+* @param string       $categoria Aceita as categorias "characters", "comics", "creators", "events", "series" e "stories".
+*
+* @param string|array $queryParams    Parâmetros para a pesquisa como "name", "nameStartsWith", "title" etc. Exemplo:
+*                                     array (
+*                                        'nameStartsWith' => 'Spider',
+*                                        'orderBy' => '-name'
+*                                     )
+*/
+function GetResposeApi(string $categoria, $queryParams = null)
 {
+    if (is_array($queryParams)) {
+        $allParams = '&';
+        foreach ($queryParams as $param => $value) {
+            $allParams = $allParams . '&' . $param . '=' . $value;
+        }
+    } elseif (is_string($queryParams)) {
+        $allParams = '&' . $queryParams;
+    } else {
+        $allParams = '';
+    }
+
     $url = PrepararURL();
-    $urlPrepare = $url['url_base'] . $categoria . $url['autorizacaobase'] . $queryParams;
-    $response = file_get_contents($urlPrepare);
-    return $response;
+    $urlPrepare = $url['url_base'] . $categoria . $url['autorizacaobase'] . $allParams;
+
+    $ch = curl_init($urlPrepare);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    $response = json_decode($response);
+
+    if (!is_null($response) && $response->status == 'Ok') {
+        return $response;
+    } elseif (is_null($response)) {
+        return '<b>Erro PROC02</b><br>Ocorreu um erro com a requisição. Por favor, entre em contato com os desenvolvedores!';
+    } elseif ($response->status == 'Error') {
+        return $response->code;
+    } else {
+        return $response;
+    }
 }
