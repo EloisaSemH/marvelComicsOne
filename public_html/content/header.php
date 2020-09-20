@@ -10,3 +10,5 @@
     <link rel="shortcut icon" href="../images/favicon.ico">
     <title>Marvel One</title>
 </head>
+
+<body class="bg-light">
