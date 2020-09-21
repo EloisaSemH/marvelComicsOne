@@ -1,5 +1,12 @@
-var url_atual = window.location.pathname;
+window.addEventListener("load", () => {
+    let url = window.location.pathname;
 
-var url = url_atual.split('/')
+    url = url.split('/')
+    url = url[url.length - 1].split('.')
 
-console.log(url)
+    if (url[0] == 'index') {
+        navbar.className = navbar.className + ' indexNavbar'
+    } else {
+        navbar.className = navbar.className + ' bg-dark'
+    }
+})

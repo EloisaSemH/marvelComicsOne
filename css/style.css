@@ -1,4 +1,5 @@
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
+
 #index {
     /* https://pxhere.com/pt/photo/817442 */
     background: linear-gradient(rgba(0, 0, 0, 1), rgba(182, 0, 0, 0.5)), url(../images/image-bg.jpg);
@@ -16,7 +17,7 @@ a:hover {
     min-height: 650px;
 }
 
-#navbar {
+.indexNavbar {
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(255, 0, 0, 0));
 }
 
