@@ -1,5 +1,5 @@
 <?php
-require_once('../processamento/processamento.php');
+// require_once('../processamento/processamento.php');
 // $characters = GetResposeApi('characters', array ('nameStartsWith' => 'Spider', 'orderBy' => '-name'));
 
 // var_dump($characters);

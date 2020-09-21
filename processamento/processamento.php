@@ -50,7 +50,7 @@ function GetResposeApi(string $categoria, $queryParams = null)
     $response = json_decode($response);
 
     if (!is_null($response) && $response->code == 200) {
-        return $response;
+        return $response->data->results;
     } elseif (is_null($response)) {
         return '<b>Erro PROC02</b><br>Ocorreu um erro com a requisição. Por favor, entre em contato com os desenvolvedores!';
     } elseif ($response->status == 'Error') {
@@ -87,4 +87,41 @@ function TraduzirTexto(string $texto)
             return $response;
         }
     }
+}
+
+function GetImage(string $url)
+{
+    $headers[] = 'Accept: image/gif, image/x-bitmap, image/jpeg, image/pjpeg';
+    $headers[] = 'Connection: Keep-Alive';
+    $headers[] = 'Content-type: application/x-www-form-urlencoded;charset=UTF-8';
+    $useragent = 'php';
+    $process = curl_init($url);
+    curl_setopt($process, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($process, CURLOPT_HEADER, 0);
+    curl_setopt($process, CURLOPT_USERAGENT, $useragent);
+    curl_setopt($process, CURLOPT_TIMEOUT, 30);
+    curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($process, CURLOPT_FOLLOWLOCATION, 1);
+    $return = curl_exec($process);
+    curl_close($process);
+    return $return;
+}
+
+function SaveImage(string $path, string $extension, $size = '')
+{
+    if ($size != '') {
+        $size = '/' . $size;
+    }
+
+    $url = PrepararURL();
+    $urlPrepare = $path . $size . '.' . $extension . $url['autorizacaobase'];
+
+    $imagename= basename($path.'.'.$extension);
+    if (file_exists('./'.$imagename)) {
+        echo 'a';
+    }
+    $image = GetImage($urlPrepare);
+    file_put_contents('./'.$imagename, $image);
+    
+    var_dump();
 }
