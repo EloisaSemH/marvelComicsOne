@@ -15,10 +15,11 @@ window.addEventListener("load", () => {
 function TextLimit() {
     let obj = document.querySelectorAll('.card-text');
     obj.forEach((txt) => {
-        console.log(txt.textContent);
-        let textC = txt.textContent;
-        let lenght = 100;
-        let txtFormated = textC.substr(0, lenght);
-        txt.innerHTML = txtFormated + '...';
+        if (txt.textContent != '') {
+            let textC = txt.textContent;
+            let lenght = 100;
+            let txtFormated = textC.substr(0, lenght);
+            txt.innerHTML = txtFormated + '...';
+        }
     });
 }

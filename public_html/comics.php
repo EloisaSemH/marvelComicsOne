@@ -11,8 +11,8 @@ if(!isset($_GET['pg']) || is_null($_GET['pg']) || $_GET['pg'] == '' || $_GET['pg
 }
 require_once('../processamento/processamento.php');
 
-$response = GetResposeApi('events', array('offset' => ($pg * 18), 'limit' => 18));
-RefreshNumbers('events', $response->total);
+$response = GetResposeApi('comics', array('offset' => ($pg * 18), 'limit' => 18));
+RefreshNumbers('comics', $response->total);
 ?>
 <div class="container">
     <main class="row">

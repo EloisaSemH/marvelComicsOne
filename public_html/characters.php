@@ -11,9 +11,10 @@ if(!isset($_GET['pg']) || is_null($_GET['pg']) || $_GET['pg'] == '' || $_GET['pg
 }
 require_once('../processamento/processamento.php');
 
-$response = GetResposeApi('events', array('offset' => ($pg * 18), 'limit' => 18));
-RefreshNumbers('events', $response->total);
+$response = GetResposeApi('characters', array('offset' => ($pg * 18), 'limit' => 18));
+RefreshNumbers('characters', $response->total);
 ?>
+
 <div class="container">
     <main class="row">
         <?php include_once('content/sidebar.php'); ?>
@@ -22,14 +23,14 @@ RefreshNumbers('events', $response->total);
                 <?php foreach ($response->results as $card) { ?>
                 <div class="col-lg-4 col-md-2 col-sm-12 mb-4">
                     <div class="card h-100">
-                        <a href="event.php?id=<?php echo $card->id; ?>" class="text-marvel">
+                        <a href="creator.php?id=<?php echo $card->id; ?>" class="text-marvel">
                             <img src="<?php echo (!is_null($card->thumbnail)) ? SaveImage($card->thumbnail->path, $card->thumbnail->extension, 'landscape_incredible') : '../images/content/image_not_available-landscape_incredible.jpg';?>"
-                                class="card-img-top" alt="Capa <? echo $card->title; ?>">
+                                class="card-img-top" alt="Capa <? echo $card->name; ?>">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="event.php?id=<?php echo $card->id; ?>" class="text-marvel">
-                                    <? echo $card->title; ?>
+                                <a href="creator.php?id=<?php echo $card->id; ?>" class="text-marvel">
+                                    <? echo $card->name; ?>
                                 </a>
                             </h5>
                             <p class="card-text"><?php echo (!is_null($card->description)) ? TraduzirTexto($card->description) : ''; ?></p>
@@ -61,4 +62,5 @@ RefreshNumbers('events', $response->total);
         </article>
     </main>
 </div>
+
 <?php include_once('content/footer.php'); ?>

@@ -50,7 +50,7 @@ function GetResposeApi(string $categoria, $queryParams = null)
     $response = json_decode($response);
 
     if (!is_null($response) && $response->code == 200) {
-        return $response->data->results;
+        return $response->data;
     } elseif (is_null($response)) {
         return '<b>Erro PROC02</b><br>Ocorreu um erro com a requisição. Por favor, entre em contato com os desenvolvedores!';
     } elseif ($response->status == 'Error') {
@@ -63,9 +63,13 @@ function GetResposeApi(string $categoria, $queryParams = null)
 function TraduzirTexto(string $texto)
 {
     if ($texto != ' ' && $texto != '') {
+
+        $texto = trim(substr($texto, 0, 100));
+        $textoSemEspaco = str_replace(' ', '%20', $texto);
+
         $url = 'https://api.mymemory.translated.net/get?langpair=en-us|pt-br&q=';
 
-        $urlPrepare = $url . $texto;
+        $urlPrepare = $url . $textoSemEspaco;
 
         $ch = curl_init($urlPrepare);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -75,16 +79,10 @@ function TraduzirTexto(string $texto)
 
         $response = json_decode($response);
 
-        if (!is_null($response) && !$response->quotaFinished && !$response->responseStatus == 200) {
-            return $response->matches->translation;
-        } elseif (is_null($response)) {
-            return '<b>Erro PROC03</b><br>Ocorreu um erro com a requisição. Por favor, entre em contato com os desenvolvedores!';
-        } elseif ($response->quotaFinished) {
-            return '<b>Erro PROC03.2</b><br>O limite de traduções foi atingido!';
-        } elseif (!is_null($response->exception_code)) {
-            return $response->exception_code;
+        if (isset($response->responseStatus) && $response->responseStatus == 200) {
+            return trim($response->responseData->translatedText);
         } else {
-            return $response;
+            return $texto;
         }
     }
 }
@@ -111,12 +109,14 @@ function SaveImage(string $path, string $extension, $size = '')
 {
     if ($size != '') {
         $sizeName = '-' . $size;
-    }else{
+    } else {
         $sizeName = '';
     }
 
     $imagename = basename($path . $sizeName . '.' . $extension);
+    
     $caminho =  '../images/content/' . $imagename;
+
     if (file_exists('../images/content/' . $imagename)) {
         return $caminho;
     } else {
@@ -128,5 +128,62 @@ function SaveImage(string $path, string $extension, $size = '')
         $image = GetImage($urlPrepare);
         file_put_contents('../images/content/' . $imagename, $image);
         return $caminho;
+    }
+}
+
+function RefreshNumbers(string $categoria, int $valor)
+{
+    if (file_exists('../config/statistics.txt')) {
+        $arquivo = fopen('../config/statistics.txt', 'r');
+        $novoArq = '';
+        while ($linha = fgets($arquivo, 1024)) {
+            $linhaExplodida = explode('=', $linha);
+            if ($linhaExplodida[0] == $categoria) {
+                $novoArq = ($novoArq . $categoria . '=' . $valor) . PHP_EOL;
+            } else {
+                $novoArq = $novoArq . $linha;
+            }
+        }
+        fclose($arquivo);
+        $arquivo = fopen('../config/statistics.txt', 'w+');
+        fwrite($arquivo, $novoArq);
+        fclose($arquivo);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function GetNumbers()
+{
+    $statistics = [];
+    if (file_exists('../config/statistics.txt')) {
+        $arquivo = fopen('../config/statistics.txt', 'r');
+        while ($linha = fgets($arquivo, 1024)) {
+            $linhaExplodida = explode('=', $linha);
+            switch ($linhaExplodida[0]) {
+                case 'creators':
+                    $statistics['creators'] = $linhaExplodida[1];
+                    break;
+                case 'stories':
+                    $statistics['stories'] = $linhaExplodida[1];
+                    break;
+                case 'events':
+                    $statistics['events'] = $linhaExplodida[1];
+                    break;
+                case 'characters':
+                    $statistics['characters'] = $linhaExplodida[1];
+                    break;
+                case 'comics':
+                    $statistics['comics'] = $linhaExplodida[1];
+                    break;
+                case 'series':
+                    $statistics['series'] = $linhaExplodida[1];
+                    break;
+            }
+        }
+        return $statistics;
+    } else {
+        return false;
     }
 }
