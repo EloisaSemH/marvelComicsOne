@@ -64,40 +64,40 @@ include_once('content/header.php');
     <div class="row mx-3 bg-light">
         <section class="col-12 col-sm-6 col-md-4 image-grid-item">
             <div style="background-image: url(../images/image-bg.jpg);" class="entry-cover image-grid-cover has-image">
-                <a href="categories.php?cat=creators" class="image-grid-clickbox"></a>
-                <a href="categories.php?cat=creators" class="cover-wrapper">Criadores</a>
+                <a href="creators.php" class="image-grid-clickbox"></a>
+                <a href="creators.php" class="cover-wrapper">Criadores</a>
+            </div>
+        </section>
+        <section class="col-12 col-sm-6 col-md-4 image-grid-item">
+            <div style="background-image: url(../images/image-bg.jpg);" class="image-grid-cover">
+                <a href="stories.php" class="image-grid-clickbox"></a>
+                <a href="stories.php" class="cover-wrapper">Estórias</a>
             </div>
         </section>
         <section class="col-12 col-sm-6 col-md-4 image-grid-item">
             <div style="background-image: url(../images/image-bg.jpg);" class="entry-cover image-grid-cover has-image">
-                <a href="categories.php?cat=events" class="image-grid-clickbox"></a>
-                <a href="categories.php?cat=events" class="cover-wrapper">Eventos e crossovers</a>
+                <a href="events.php" class="image-grid-clickbox"></a>
+                <a href="events.php" class="cover-wrapper">Eventos e crossovers</a>
             </div>
         </section>
         <section class="col-12 col-sm-6 col-md-4 image-grid-item">
             <div style="background-image: url(../images/characters-spiderman.jpeg);"
                 class="entry-cover image-grid-cover has-image">
-                <a href="categories.php?cat=" class="image-grid-clickbox"></a>
-                <a href="categories.php?cat=" class="cover-wrapper">Personagens</a>
+                <a href="characters.php" class="image-grid-clickbox"></a>
+                <a href="characters.php" class="cover-wrapper">Personagens</a>
             </div>
         </section>
         <section class="col-12 col-sm-6 col-md-4 image-grid-item">
             <div style="background-image: url(../images/comics-xmen-daysoffuture.jpeg);"
                 class="entry-cover image-grid-cover has-image">
-                <a href="categories.php?cat=comics" class="image-grid-clickbox"></a>
-                <a href="categories.php?cat=comics" class="cover-wrapper">Quadrinhos</a>
+                <a href="comics.php" class="image-grid-clickbox"></a>
+                <a href="comics.php" class="cover-wrapper">Quadrinhos</a>
             </div>
         </section>
         <section class="col-12 col-sm-6 col-md-4 image-grid-item">
             <div style="background-image: url(../images/image-bg.jpg);" class="entry-cover image-grid-cover has-image">
-                <a href="categories.php?cat=series" class="image-grid-clickbox"></a>
-                <a href="categories.php?cat=series" class="cover-wrapper">Séries de quadrinhos</a>
-            </div>
-        </section>
-        <section class="col-12 col-sm-6 col-md-4 image-grid-item">
-            <div style="background-image: url(../images/image-bg.jpg);" class="image-grid-cover">
-                <a href="categories.php?cat=lucky" class="image-grid-clickbox"></a>
-                <a href="categories.php?cat=lucky" class="cover-wrapper">Estou com sorte!</a>
+                <a href="series.php" class="image-grid-clickbox"></a>
+                <a href="series.php" class="cover-wrapper">Séries de quadrinhos</a>
             </div>
         </section>
     </div>

@@ -10,11 +10,12 @@
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <h5>Mapa do site</h5>
                 <ul class="list-unstyled quick-links">
-                    <li><a href="categories.php?cat=creators"><i class="fa fa-angle-double-right"></i>Criadores</a></li>
-                    <li><a href="categories.php?cat=events"><i class="fa fa-angle-double-right"></i>Eventos e crossovers</a></li>
-                    <li><a href="categories.php?cat=characters"><i class="fa fa-angle-double-right"></i>Personagens</a></li>
-                    <li><a href="categories.php?cat=comics"><i class="fa fa-angle-double-right"></i>Quadrinhos</a></li>
-                    <li><a href="categories.php?cat=series"><i class="fa fa-angle-double-right"></i>Séries de quadrinhos</a></li>
+                    <li><a href="creators.php"><i class="fa fa-angle-double-right"></i>Criadores</a></li>
+                    <li><a href="stories.php"><i class="fa fa-angle-double-right"></i>Estórias</a></li>
+                    <li><a href="events.php"><i class="fa fa-angle-double-right"></i>Eventos e crossovers</a></li>
+                    <li><a href="characters.php"><i class="fa fa-angle-double-right"></i>Personagens</a></li>
+                    <li><a href="comics.php"><i class="fa fa-angle-double-right"></i>Quadrinhos</a></li>
+                    <li><a href="series.php"><i class="fa fa-angle-double-right"></i>Séries de quadrinhos</a></li>
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4">

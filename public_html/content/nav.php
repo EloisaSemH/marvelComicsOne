@@ -17,11 +17,12 @@
                     Categorias
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="categories.php?cat=creators">Criadores</a>
-                    <a class="dropdown-item" href="categories.php?cat=events">Eventos</a>
-                    <a class="dropdown-item" href="categories.php?cat=characters">Personagens</a>
-                    <a class="dropdown-item" href="categories.php?cat=comics">Quadrinhos</a>
-                    <a class="dropdown-item" href="categories.php?cat=series">Séries</a>
+                    <a class="dropdown-item" href="creators.php">Criadores</a>
+                    <a class="dropdown-item" href="stories.php">Estórias</a>
+                    <a class="dropdown-item" href="events.php">Eventos</a>
+                    <a class="dropdown-item" href="characters.php">Personagens</a>
+                    <a class="dropdown-item" href="comics.php">Quadrinhos</a>
+                    <a class="dropdown-item" href="series.php">Séries</a>
                 </div>
             </li>
             <li class="nav-item">
