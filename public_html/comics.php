@@ -12,23 +12,26 @@ if(!isset($_GET['pg']) || is_null($_GET['pg']) || $_GET['pg'] == '' || $_GET['pg
 require_once('../processamento/processamento.php');
 
 $response = GetResposeApi('comics', array('offset' => ($pg * 18), 'limit' => 18));
-RefreshNumbers('comics', $response->total);
 ?>
 <div class="container">
     <main class="row">
         <?php include_once('content/sidebar.php'); ?>
         <article class="col-lg-8 pt-3">
             <div class="row row-cols-1 row-cols-md-3">
-                <?php foreach ($response->results as $card) { ?>
+                <?php 
+                if($response->code == 200){
+                    $response = $response->data;
+RefreshNumbers('comics', $response->total);
+foreach ($response->results as $card) { ?>
                 <div class="col-lg-4 col-md-2 col-sm-12 mb-4">
                     <div class="card h-100">
-                        <a href="event.php?id=<?php echo $card->id; ?>" class="text-marvel">
+                        <a href="comic.php?id=<?php echo $card->id; ?>" class="text-marvel">
                             <img src="<?php echo (!is_null($card->thumbnail)) ? SaveImage($card->thumbnail->path, $card->thumbnail->extension, 'landscape_incredible') : '../images/content/image_not_available-landscape_incredible.jpg';?>"
                                 class="card-img-top" alt="Capa <? echo $card->title; ?>">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="event.php?id=<?php echo $card->id; ?>" class="text-marvel">
+                                <a href="comic.php?id=<?php echo $card->id; ?>" class="text-marvel">
                                     <? echo $card->title; ?>
                                 </a>
                             </h5>
@@ -36,7 +39,9 @@ RefreshNumbers('comics', $response->total);
                         </div>
                     </div>
                 </div>
-                <? } ?>
+                <? } }else{
+                include_once('content/404.php');
+            } ?>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
@@ -46,7 +51,7 @@ RefreshNumbers('comics', $response->total);
                         </a>
                     </li>
                     <?php if ($pg > 1) { ?>
-                    <li class="page-item"><a class="page-link" href="?pg=<?php echo $pg - 1;?>">1</a></li>
+                    <li class="page-item"><a class="page-link" href="?pg=<?php echo $pg - 1;?>"><?php echo $pg - 1;?></a></li>
                     <? } ?>
                     <li class="page-item active"><a class="page-link" href="#"><?php echo $pg ?></a></li>
                     <li class="page-item"><a class="page-link"

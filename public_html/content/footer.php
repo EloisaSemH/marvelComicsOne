@@ -22,7 +22,7 @@
                 <h5>Outros links</h5>
                 <ul class="list-unstyled quick-links">
                     <li><a href="index.php"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Sobre</a></li>
+                    <li><a href="sobre.php"><i class="fa fa-angle-double-right"></i>Sobre</a></li>
                     <li><a href="mailto:flordecactocomunicacao@gmail.com"><i
                                 class="fa fa-angle-double-right"></i>Contato</a></li>
                     <li><a href="https://github.com/EloisaSemH/marvelComicsOne"><i
