@@ -5,26 +5,26 @@ function PrepararURL()
     require_once('../control/model/authorization.php');
     $autorizarion = new Authorization;
     $url = [];
-    
+
     $keys = $autorizarion->GetKeys();
 
     $url['url_base'] = 'https://gateway.marvel.com:443/v1/public/';
-    $url['autorizacaobase'] = '?ts='. $keys['timestamp'] . '&apikey='. $keys['public'] . '&hash=' . $keys['hash'];
-    
+    $url['autorizacaobase'] = '?ts=' . $keys['timestamp'] . '&apikey=' . $keys['public'] . '&hash=' . $keys['hash'];
+
     return $url;
 }
 
 /**
-* Envia uma requisição para a API da Marvel
-*
-* @param string       $categoria Aceita as categorias "characters", "comics", "creators", "events", "series" e "stories".
-*
-* @param string|array $queryParams    Parâmetros para a pesquisa como "name", "nameStartsWith", "title" etc. Exemplo:
-*                                     array (
-*                                        'nameStartsWith' => 'Spider',
-*                                        'orderBy' => '-name'
-*                                     )
-*/
+ * Envia uma requisição para a API da Marvel
+ *
+ * @param string       $categoria Aceita as categorias "characters", "comics", "creators", "events", "series" e "stories".
+ *
+ * @param string|array $queryParams    Parâmetros para a pesquisa como "name", "nameStartsWith", "title" etc. Exemplo:
+ *                                     array (
+ *                                        'nameStartsWith' => 'Spider',
+ *                                        'orderBy' => '-name'
+ *                                     )
+ */
 function GetResposeApi(string $categoria, $queryParams = null)
 {
     if (is_array($queryParams)) {
@@ -110,18 +110,23 @@ function GetImage(string $url)
 function SaveImage(string $path, string $extension, $size = '')
 {
     if ($size != '') {
-        $size = '/' . $size;
+        $sizeName = '-' . $size;
+    }else{
+        $sizeName = '';
     }
 
-    $url = PrepararURL();
-    $urlPrepare = $path . $size . '.' . $extension . $url['autorizacaobase'];
-
-    $imagename= basename($path.'.'.$extension);
-    if (file_exists('./'.$imagename)) {
-        echo 'a';
+    $imagename = basename($path . $sizeName . '.' . $extension);
+    $caminho =  '../images/content/' . $imagename;
+    if (file_exists('../images/content/' . $imagename)) {
+        return $caminho;
+    } else {
+        if ($size != '') {
+            $size = '/' . $size;
+        }
+        $url = PrepararURL();
+        $urlPrepare = $path . $size . '.' . $extension . $url['autorizacaobase'];
+        $image = GetImage($urlPrepare);
+        file_put_contents('../images/content/' . $imagename, $image);
+        return $caminho;
     }
-    $image = GetImage($urlPrepare);
-    file_put_contents('./'.$imagename, $image);
-    
-    var_dump();
 }

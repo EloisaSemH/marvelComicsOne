@@ -8,5 +8,17 @@ window.addEventListener("load", () => {
         navbar.className = navbar.className + ' indexNavbar'
     } else {
         navbar.className = navbar.className + ' bg-dark'
+        TextLimit();
     }
 })
+
+function TextLimit() {
+    let obj = document.querySelectorAll('.card-text');
+    obj.forEach((txt) => {
+        console.log(txt.textContent);
+        let textC = txt.textContent;
+        let lenght = 100;
+        let txtFormated = textC.substr(0, lenght);
+        txt.innerHTML = txtFormated + '...';
+    });
+}
