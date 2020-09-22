@@ -33,7 +33,7 @@ $response = GetResposeApi('series/' . $id);
                     foreach ($response->results as $serie) { ?>
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12">
-                    <img src="<?php echo (!is_null($serie->thumbnail)) ? SaveImage($serie->thumbnail->path, $serie->thumbnail->extension) : '../images/content/image_not_available-landscape_incredible.jpg';?>"
+                    <img src="<?php echo (!is_null($serie->thumbnail)) ? SaveImage($serie->thumbnail->path, $serie->thumbnail->extension) : 'images/content/image_not_available-landscape_incredible.jpg';?>"
                         class="w-100 mb-3" alt="Capa <? echo $serie->title; ?>">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">

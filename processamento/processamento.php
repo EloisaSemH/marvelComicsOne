@@ -115,9 +115,9 @@ function SaveImage(string $path, string $extension, $size = '')
 
     $imagename = basename($path . $sizeName . '.' . $extension);
     
-    $caminho =  '../images/content/' . $imagename;
+    $caminho =  'images/content/' . $imagename;
 
-    if (file_exists('../images/content/' . $imagename)) {
+    if (file_exists('images/content/' . $imagename)) {
         return $caminho;
     } else {
         if ($size != '') {
@@ -126,7 +126,7 @@ function SaveImage(string $path, string $extension, $size = '')
         $url = PrepararURL();
         $urlPrepare = $path . $size . '.' . $extension . $url['autorizacaobase'];
         $image = GetImage($urlPrepare);
-        file_put_contents('../images/content/' . $imagename, $image);
+        file_put_contents('images/content/' . $imagename, $image);
         return $caminho;
     }
 }

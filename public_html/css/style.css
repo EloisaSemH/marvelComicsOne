@@ -29,7 +29,23 @@ a:hover {
 }
 
 .w-5 {
-    width: 10% !important;
+    width: 5% !important;
+}
+
+@media (max-width:767px) {
+    #apresentacao {
+        padding-top: 12rem !important;
+    }
+}
+
+.navbar-brand img {
+    width: 5%;
+}
+
+@media (max-width:767px) {
+    .navbar-brand img {
+        width: 55px;
+    }
 }
 
 

@@ -35,7 +35,7 @@ $response = GetResposeApi('events/' . $id);
                 ?>
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12">
-                    <img src="<?php echo (!is_null($event->thumbnail)) ? SaveImage($event->thumbnail->path, $event->thumbnail->extension) : '../images/content/image_not_available-landscape_incredible.jpg';?>"
+                    <img src="<?php echo (!is_null($event->thumbnail)) ? SaveImage($event->thumbnail->path, $event->thumbnail->extension) : 'images/content/image_not_available-landscape_incredible.jpg';?>"
                         class="w-100 mb-3" alt="Capa <? echo $event->title; ?>">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">

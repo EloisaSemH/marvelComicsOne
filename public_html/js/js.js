@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     url = url.split('/')
     url = url[url.length - 1].split('.')
 
-    if (url[0] == 'index') {
+    if (url[0] == 'index' || url == 'public_html' || url == '') {
         navbar.className = navbar.className + ' indexNavbar'
     } else {
         navbar.className = navbar.className + ' bg-dark'

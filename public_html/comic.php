@@ -34,7 +34,7 @@ $response = GetResposeApi('comics/' . $id);
                     foreach ($response->results as $comic) { ?>
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12">
-                    <img src="<?php echo (!is_null($comic->thumbnail)) ? SaveImage($comic->thumbnail->path, $comic->thumbnail->extension) : '../images/content/image_not_available-landscape_incredible.jpg';?>"
+                    <img src="<?php echo (!is_null($comic->thumbnail)) ? SaveImage($comic->thumbnail->path, $comic->thumbnail->extension) : 'images/content/image_not_available-landscape_incredible.jpg';?>"
                         class="w-100 mb-3" alt="Capa <? echo $comic->title; ?>">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">

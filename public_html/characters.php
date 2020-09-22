@@ -27,7 +27,7 @@ $response = GetResposeApi('characters', array('offset' => ($pg * 18), 'limit' =>
                 <div class="col-lg-4 col-md-2 col-sm-12 mb-4">
                     <div class="card h-100">
                         <a href="character.php?id=<?php echo $card->id; ?>" class="text-marvel">
-                            <img src="<?php echo (!is_null($card->thumbnail)) ? SaveImage($card->thumbnail->path, $card->thumbnail->extension, 'landscape_incredible') : '../images/content/image_not_available-landscape_incredible.jpg';?>"
+                            <img src="<?php echo (!is_null($card->thumbnail)) ? SaveImage($card->thumbnail->path, $card->thumbnail->extension, 'landscape_incredible') : 'images/content/image_not_available-landscape_incredible.jpg';?>"
                                 class="card-img-top" alt="Capa <? echo $card->name; ?>">
                         </a>
                         <div class="card-body">
