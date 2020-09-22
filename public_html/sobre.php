@@ -10,7 +10,7 @@ include_once('content/nav.php');
     </div>
     <div class="row justify-content-center">
         <article class="col-sm-12 col-md-8 col-lg-6 text-center">
-            <img src="/images/logotipoMarvelComicsOne1.png" class="w-50">
+            <img src="images/logotipoMarvelComicsOne1.png" class="w-50">
             <p>O MarvelComicsOne é um site de consumo da API da Marvel, desenvolvido como atividade avaliativa da
                 matéria de desenvolvimento para servidores, do quarto semestre do curso de Sistemas para a Internet, da
                 Faculdade de Tecnologia de São Roque (FATEC-SR), ministrado pelo professor Fernando Leonid.</p>
@@ -26,7 +26,7 @@ include_once('content/nav.php');
     <div class="row justify-content-center">
         <section class="col-sm-12 col-md-12 col-lg-11 text-right">
             <div class="float-right ml-3">
-                <img src="/images/cesar.jpg" alt="" class="rounded-circle">
+                <img src="images/cesar.jpg" alt="" class="rounded-circle">
             </div>
             <h2 class="mb-0 text-marvel">Cesar August Silva Barbosa</h2>
             <h5 class="mb-0 font-italic">Designer e coder</h5>
@@ -38,7 +38,7 @@ include_once('content/nav.php');
     <div class="row justify-content-center mt-4">
         <section class="col-sm-12 col-md-12 col-lg-11 ">
             <div class="float-left mr-3">
-                <img src="/images/eloisa.jpg"
+                <img src="images/eloisa.jpg"
                     alt="Foto da desenvolvedora Eloísa, que usa um óculos preto levemente arredondado, tem olhos castanho-escuros e cabelo castanho com azul."
                     class="rounded-circle">
             </div>
