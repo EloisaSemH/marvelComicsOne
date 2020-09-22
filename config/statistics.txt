@@ -1,6 +1,6 @@
 creators=5376
-stories=111171
+stories=111172
 events=74
 characters=1493
-comics=47630
+comics=47636
 series=11952
