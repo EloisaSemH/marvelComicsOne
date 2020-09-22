@@ -3,4 +3,4 @@ config/configkeys.txt
 
 config/configtranslate.txt
 
-public_html/images/content/
+#public_html/images/content/
