@@ -31,7 +31,8 @@ function OrderBy(orderby) {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#ff0000',
-        confirmButtonText: 'Sim!'
+        confirmButtonText: 'Sim!',
+        cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.isConfirmed) {
             let url = window.location.pathname
