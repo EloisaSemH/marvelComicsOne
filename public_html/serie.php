@@ -41,7 +41,7 @@ $response = GetResposeApi('series/' . $id);
                         <? echo $serie->title; ?>
                     </h2>
                     <p class="">
-                        <?php echo ($serie->description); // (!is_null($serie->description)) ? TraduzirTexto($serie->description) : ''; ?>
+                        <?php echo (!is_null($serie->description)) ? TraduzirTexto($serie->description) : ''; ?>
                     </p>
                     <?php if (!is_null($serie->urls)) { ?>
                     <h5>Saiba mais:</h5>

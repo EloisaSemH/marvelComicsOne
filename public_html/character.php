@@ -42,7 +42,7 @@ $response = GetResposeApi('characters/' . $id);
                         <? echo $character->name; ?>
                     </h2>
                     <p class="">
-                        <?php echo ($character->description); // (!is_null($character->description)) ? TraduzirTexto($character->description) : ''; ?>
+                        <?php echo (!is_null($character->description)) ? TraduzirTexto($character->description) : ''; ?>
                     </p>
                 </div>
                 <?php if (is_object($character->stories) && $character->stories->available > 0){?>

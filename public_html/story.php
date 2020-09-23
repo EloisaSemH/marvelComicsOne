@@ -41,7 +41,7 @@ $response = GetResposeApi('stories/' . $id);
                         <? echo $story->title; ?>
                     </p>
                     <p class="">
-                        <?php echo ($story->description); // (!is_null($story->description)) ? TraduzirTexto($story->description) : ''; ?>
+                        <?php echo (!is_null($story->description)) ? TraduzirTexto($story->description) : ''; ?>
                     </p>
 
                 </div>

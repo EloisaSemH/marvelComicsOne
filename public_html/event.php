@@ -43,7 +43,7 @@ $response = GetResposeApi('events/' . $id);
                         <? echo $event->title; ?>
                     </h2>
                     <p class="">
-                        <?php echo ($event->description); // (!is_null($event->description)) ? TraduzirTexto($event->description) : ''; ?>
+                        <?php echo (!is_null($event->description)) ? TraduzirTexto($event->description) : ''; ?>
                     </p>
                     <?php if (!is_null($event->urls)) { ?>
                     <h5>Saiba mais:</h5>

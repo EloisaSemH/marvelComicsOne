@@ -66,7 +66,7 @@ function TraduzirTexto(string $texto)
 {
     if ($texto != ' ' && $texto != '') {
 
-        $texto = trim(substr($texto, 0, 100));
+        $texto = trim($texto);
         $textoSemEspaco = str_replace(' ', '%20', $texto);
 
         $url = 'https://api.mymemory.translated.net/get?langpair=en-us|pt-br&q=';

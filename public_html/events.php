@@ -61,7 +61,7 @@ $response = GetResposeApi('events', $query);
                                 </a>
                             </h5>
                             <p class="card-text">
-                                <?php echo (!is_null($card->description)) ? TraduzirTexto($card->description) : ''; ?>
+                                <?php echo (!is_null($card->description)) ? $card->description : ''; ?>
                             </p>
                         </div>
                     </div>

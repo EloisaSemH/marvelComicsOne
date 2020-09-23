@@ -42,7 +42,7 @@ $response = GetResposeApi('comics/' . $id);
                         <? echo $comic->title; ?>
                     </h2>
                     <p class="">
-                        <?php echo ($comic->description); // (!is_null($comic->description)) ? TraduzirTexto($comic->description) : ''; ?>
+                        <?php echo (!is_null($comic->description)) ? TraduzirTexto($comic->description) : ''; ?>
                     </p>
 
                 </div>
