@@ -11,7 +11,30 @@ if(!isset($_GET['pg']) || is_null($_GET['pg']) || $_GET['pg'] == '' || $_GET['pg
 }
 require_once('../processamento/processamento.php');
 
-$response = GetResposeApi('characters', array('offset' => ($pg * 18), 'limit' => 18));
+$query = [];
+$query['offset'] = ($pg * 18);
+$query['limit'] = 18;
+
+if(isset($_GET['orderby']) && !is_null($_GET['orderby']) && $_GET['orderby'] != ''){
+    switch ($_GET['orderby']){
+        case 'a':
+            $query['orderBy'] =  'name';
+        break;
+        case 'z':
+            $query['orderBy'] =  '-name';
+        break;
+        case 'modified':
+            $query['orderBy'] = 'modified';
+        break;
+        case '-modified':
+            $query['orderBy'] = '-modified';
+        break;
+        default:
+        break;
+    }
+}
+
+$response = GetResposeApi('characters', $query);
 ?>
 
 <div class="container">
@@ -19,7 +42,9 @@ $response = GetResposeApi('characters', array('offset' => ($pg * 18), 'limit' =>
         <?php include_once('content/sidebar.php'); ?>
         <article class="col-lg-8 pt-3">
             <div class="row row-cols-1 row-cols-md-3">
-                <?php 
+                <small class="text-muted pl-3 mb-1"><?php echo $response->data->total; ?> resultados encontrados em <?php echo intval($response->data->total / 18); ?> páginas</small>
+                <?php
+                include_once('content/searchbar.php');
                 if($response->code == 200){
                     $response = $response->data;
                     RefreshNumbers('characters', $response->total);
@@ -42,9 +67,11 @@ $response = GetResposeApi('characters', array('offset' => ($pg * 18), 'limit' =>
                         </div>
                     </div>
                 </div>
-                <? } }else{
-                include_once('content/404.php');
-            } ?>
+                <? } } elseif (!is_null($response)){
+                    echo $response;
+                }else{
+                    include_once('content/404.php');
+                } ?>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
@@ -54,7 +81,8 @@ $response = GetResposeApi('characters', array('offset' => ($pg * 18), 'limit' =>
                         </a>
                     </li>
                     <?php if ($pg > 1) { ?>
-                    <li class="page-item"><a class="page-link" href="?pg=<?php echo $pg - 1;?>"><?php echo $pg - 1;?></a></li>
+                    <li class="page-item"><a class="page-link"
+                            href="?pg=<?php echo $pg - 1;?>"><?php echo $pg - 1;?></a></li>
                     <? } ?>
                     <li class="page-item active"><a class="page-link" href="#"><?php echo $pg ?></a></li>
                     <li class="page-item"><a class="page-link"

@@ -9,18 +9,43 @@ if(!isset($_GET['pg']) || is_null($_GET['pg']) || $_GET['pg'] == '' || $_GET['pg
     $pg = $_GET['pg'];
     $previusStyle = '';
 }
+$query = [];
+$query['offset'] = ($pg * 18);
+$query['limit'] = 18;
+
+if(isset($_GET['orderby']) && !is_null($_GET['orderby']) && $_GET['orderby'] != ''){
+    switch ($_GET['orderby']){
+        case 'a':
+            $query['orderBy'] =  'name';
+        break;
+        case 'z':
+            $query['orderBy'] =  '-name';
+        break;
+        case 'modified':
+            $query['orderBy'] = 'modified';
+        break;
+        case '-modified':
+            $query['orderBy'] = '-modified';
+        break;
+        default:
+        break;
+    }
+}
 require_once('../processamento/processamento.php');
 
-$response = GetResposeApi('series', array('offset' => ($pg * 18), 'limit' => 18));
+$response = GetResposeApi('series', $query);
 ?>
 <div class="container">
     <main class="row">
         <?php include_once('content/sidebar.php'); ?>
         <article class="col-lg-8 pt-3">
             <div class="row row-cols-1 row-cols-md-3">
-                <?php if($response->code == 200){
+            <small class="text-muted pl-3 mb-1"><?php echo $response->data->total; ?> resultados encontrados em <?php echo intval($response->data->total / 18); ?> páginas</small>
+                <?php
+                include_once('content/searchbar.php');
+                if($response->code == 200){
                     $response = $response->data;
-RefreshNumbers('series', $response->total);
+                    RefreshNumbers('series', $response->total);
                     foreach ($response->results as $card) { ?>
                 <div class="col-lg-4 col-md-2 col-sm-12 mb-4">
                     <div class="card h-100">

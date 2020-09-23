@@ -23,3 +23,22 @@ function TextLimit() {
         }
     });
 }
+
+function OrderBy(orderby) {
+    Swal.fire({
+        title: 'Deseja ordenar nesta página?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#ff0000',
+        confirmButtonText: 'Sim!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let url = window.location.pathname
+            url = url.split('/')
+            url = url[url.length - 1]
+            url = url + '?orderby=' + orderby
+            document.location.href = url;
+        }
+    })
+}
