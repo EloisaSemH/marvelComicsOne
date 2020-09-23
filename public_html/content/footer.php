@@ -59,7 +59,6 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="sweetalert2.all.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 </body>
 
 </html>
