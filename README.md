@@ -12,23 +12,23 @@ Após obter a pasta em seu servidor local, crie uma conta no site de desenvolved
 https://developer.marvel.com/signup
 
 
-Depois da criação e aceitação dos termos de uso, vá em
+Depois da criação e aceitação dos termos de uso, vá em:
 
-"Get a Key" -> se não estiver logado
+"Get a Key" -> se não estiver logado.
 
-"my Developer Account" -> se estiver logado
+"my Developer Account" -> se estiver logado.
 
 
-Abra o arquvo em sua pasta na seguinte localização:
+Abra o arquvo em sua pasta na seguinte localização: 
 config/configkey.txt
 
-Copie sua private key e cole após o sinal de igual em "private="
+Copie sua private key e cole após o sinal de igual em "private=".
 
-Copie sua public key e cole após o sinal de igual em "public="
+Copie sua public key e cole após o sinal de igual em "public=".
 
-Você pode escolher o timestamp de sua preferência ou não alterar
+Você pode escolher o timestamp de sua preferência ou não alterar.
 
-Salve o arquivo
+Salve o arquivo.
 
 Pronto! 
 Seu sistema já está pronto para rodar!
